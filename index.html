@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body onload='hideTotal()'>
+    <div id="wrap">
+        <form action="" id="autoform" onsubmit="return false;">
+        <div>
+            <div class="cont_order">
+               <fieldset>
+                <legend>Рассчитайте стоимость авто:</legend>
+                <label>Выберите год:</label>
+                <label class='radiolabel'><input type="radio"  name="selectedauto" value="2013 и ранее" onclick="calculateTotal()" />2013 и ранее</label><br/>
+                <label class='radiolabel'><input type="radio"  name="selectedauto" value="2014 - 2016" onclick="calculateTotal()" />2014 - 2016</label><br/>
+                <label class='radiolabel'><input type="radio"  name="selectedauto" value="2017 - 2019" onclick="calculateTotal()" />2017 - 2019</label><br/>
+                <label class='radiolabel'><input type="radio"  name="selectedauto" value="2020 - 2022" onclick="calculateTotal()" />2020 - 2022</label><br/>
+                <br/>
+
+
+                <label>Выберите марку авто:</label>
+                <select id="brand" name='brand' onchange="calculateTotal()">
+                <option value="None">Выберите автомобиль</option>
+                <option value="BMW">BMW</option>
+                <option value="Mercedes-Benz">Mercedes-Benz</option>
+                <option value="Audi">Audi</option>
+                <option value="Lexus">Lexus</option>
+                <option value="Rolls-Royce">Rolls-Royce</option>
+               </select>
+                <br/>
+
+                <p>
+                <label for='includeoption' class="inlinelabel">Автозапуск</label>
+                <input type="checkbox" id="includeoption" name='includeoption' onclick="calculateTotal()" />
+               </p>
+               
+                <p>
+                <label class="inlinelabel" for='includeparking'>Парктроники</label>
+                <input type="checkbox" id="includeparking" name="includeparking" onclick="calculateTotal()" />
+                </p>
+
+                <div id="totalPrice"></div>
+                
+                </fieldset>
+            </div>
+            
+        </div>  
+       </form>
+	</div>
+
+    <script src="script.js"></script>
+</body>
+
+
+</html>
